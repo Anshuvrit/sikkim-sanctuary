@@ -2,41 +2,97 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Buddhist Heritage Design System - Sikkim Monastery Platform
+   Sacred colors and cultural elements respecting Buddhist traditions
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Buddhist Sacred Color Palette */
+    --background: 45 15% 97%; /* Soft mountain mist */
+    --foreground: 0 15% 15%; /* Deep charcoal text */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 45 20% 98%; /* Pure white with warmth */
+    --card-foreground: 0 15% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 45 20% 98%;
+    --popover-foreground: 0 15% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Sacred Maroon - Traditional Buddhist robes */
+    --primary: 0 75% 27%; /* Deep Buddhist maroon */
+    --primary-foreground: 45 15% 97%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Sacred Gold - Temple accents */
+    --secondary: 51 100% 50%; /* Pure gold */
+    --secondary-foreground: 0 15% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Saffron - Monk robes */
+    --muted: 30 100% 95%; /* Soft saffron background */
+    --muted-foreground: 0 25% 35%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Sky Blue - Himalayan sky */
+    --accent: 200 75% 85%; /* Mountain sky */
+    --accent-foreground: 0 15% 15%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 45 15% 97%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 30 25% 88%; /* Warm border */
+    --input: 30 25% 92%; /* Soft input background */
+    --ring: 0 75% 27%; /* Maroon focus ring */
 
-    --radius: 0.5rem;
+    --radius: 0.75rem; /* Softer, more organic radius */
+
+    /* Cultural Design Tokens */
+    --lotus-pink: 340 65% 85%; /* Lotus petals */
+    --earth-brown: 25 25% 45%; /* Himalayan earth */
+    --prayer-flag-blue: 210 100% 70%; /* Prayer flag blue */
+    --prayer-flag-white: 0 0% 100%; /* Prayer flag white */
+    --prayer-flag-red: 0 75% 55%; /* Prayer flag red */
+    --prayer-flag-green: 120 40% 45%; /* Prayer flag green */
+    --prayer-flag-yellow: 51 100% 60%; /* Prayer flag yellow */
+
+    /* Sacred Gradients */
+    --gradient-prayer-flags: 
+      linear-gradient(135deg, 
+        hsl(var(--prayer-flag-blue)), 
+        hsl(var(--prayer-flag-white)), 
+        hsl(var(--prayer-flag-red)), 
+        hsl(var(--prayer-flag-green)), 
+        hsl(var(--prayer-flag-yellow))
+      );
+    
+    --gradient-sunset: 
+      linear-gradient(135deg, 
+        hsl(var(--secondary)), 
+        hsl(30 85% 65%), 
+        hsl(var(--primary))
+      ); 
+
+    --gradient-mountain: 
+      linear-gradient(180deg, 
+        hsl(var(--accent)), 
+        hsl(var(--background))
+      );
+
+    /* Sacred Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(var(--primary) / 0.1);
+    --shadow-temple: 0 8px 40px -8px hsl(var(--primary) / 0.15);
+    --shadow-sacred: 0 0 60px -10px hsl(var(--secondary) / 0.3);
+
+    /* Animation Timings - Meditation Inspired */
+    --transition-gentle: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-sacred: all 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+    --transition-breath: all 1.2s cubic-bezier(0.4, 0, 0.6, 1);
+
+    --sidebar-background: 45 20% 98%;
+    --sidebar-foreground: 0 15% 15%;
+    --sidebar-primary: 0 75% 27%;
+    --sidebar-primary-foreground: 45 15% 97%;
+    --sidebar-accent: 30 100% 95%;
+    --sidebar-accent-foreground: 0 15% 15%;
+    --sidebar-border: 30 25% 88%;
+    --sidebar-ring: 0 75% 27%;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,41 +112,47 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark mode - Evening meditation ambiance */
+    --background: 0 15% 8%; /* Deep night sky */
+    --foreground: 45 15% 92%; /* Soft moonlight */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 15% 12%; /* Dark temple interior */
+    --card-foreground: 45 15% 92%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 15% 12%;
+    --popover-foreground: 45 15% 92%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 51 100% 70%; /* Glowing gold in darkness */
+    --primary-foreground: 0 15% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 0 75% 35%; /* Deep maroon */
+    --secondary-foreground: 45 15% 92%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 0 15% 15%; /* Deeper shadow */
+    --muted-foreground: 45 15% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 200 50% 25%; /* Deep mountain night */
+    --accent-foreground: 45 15% 92%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 45 15% 92%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 0 15% 20%; /* Subtle borders */
+    --input: 0 15% 18%; /* Dark input */
+    --ring: 51 100% 70%; /* Golden focus */
+
+    /* Dark mode cultural colors */
+    --lotus-pink: 340 35% 35%;
+    --earth-brown: 25 15% 25%;
+    
+    --sidebar-background: 0 15% 12%;
+    --sidebar-foreground: 45 15% 92%;
+    --sidebar-primary: 51 100% 70%;
+    --sidebar-primary-foreground: 0 15% 8%;
+    --sidebar-accent: 0 15% 15%;
+    --sidebar-accent-foreground: 45 15% 92%;
+    --sidebar-border: 0 15% 20%;
+    --sidebar-ring: 51 100% 70%;
   }
 }
 
@@ -100,6 +162,129 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-serif;
+    font-family: 'Georgia', 'Times New Roman', serif;
+  }
+
+  /* Smooth scrolling for meditation-like navigation */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/30 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/50;
+  }
+}
+
+@layer components {
+  /* Sacred Button Variants */
+  .btn-sacred {
+    @apply bg-gradient-to-r from-primary to-secondary text-primary-foreground px-8 py-3 rounded-full shadow-[var(--shadow-sacred)] transition-[var(--transition-sacred)] hover:scale-105 hover:shadow-[var(--shadow-temple)] font-medium;
+  }
+
+  .btn-temple {
+    @apply bg-primary text-primary-foreground px-6 py-2.5 rounded-lg shadow-[var(--shadow-soft)] transition-[var(--transition-gentle)] hover:bg-primary/90 hover:shadow-[var(--shadow-temple)];
+  }
+
+  .btn-prayer {
+    @apply bg-accent text-accent-foreground px-4 py-2 rounded-md border border-accent/30 transition-[var(--transition-gentle)] hover:bg-accent/80 hover:border-accent;
+  }
+
+  /* Cultural Cards */
+  .card-monastery {
+    @apply bg-card border border-border rounded-xl shadow-[var(--shadow-soft)] p-6 transition-[var(--transition-sacred)] hover:shadow-[var(--shadow-temple)] hover:scale-[1.02];
+  }
+
+  .card-festival {
+    @apply bg-gradient-to-br from-card to-muted border border-border rounded-lg p-4 shadow-[var(--shadow-soft)] transition-[var(--transition-gentle)] hover:shadow-[var(--shadow-temple)];
+  }
+
+  /* Prayer Flag Animation */
+  .prayer-flags {
+    background: var(--gradient-prayer-flags);
+    background-size: 400% 400%;
+    animation: prayer-wave 8s ease-in-out infinite;
+  }
+
+  /* Sacred Text Styles */
+  .text-sacred {
+    @apply text-primary font-semibold;
+  }
+
+  .text-blessing {
+    @apply text-muted-foreground italic;
+  }
+
+  /* Layout Components */
+  .container-temple {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .grid-monastery {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+  }
+
+  /* Interactive Elements */
+  .monastery-marker {
+    @apply absolute w-4 h-4 bg-primary rounded-full shadow-[var(--shadow-temple)] animate-pulse cursor-pointer transition-[var(--transition-gentle)] hover:w-6 hover:h-6 hover:animate-none;
+  }
+
+  .story-link {
+    @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+}
+
+@layer utilities {
+  /* Animation Keyframes */
+  @keyframes prayer-wave {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  @keyframes lotus-bloom {
+    0% { transform: scale(0.8) rotate(-10deg); opacity: 0.7; }
+    50% { transform: scale(1.1) rotate(5deg); opacity: 1; }
+    100% { transform: scale(1) rotate(0deg); opacity: 0.9; }
+  }
+
+  @keyframes meditation-breath {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+  }
+
+  /* Cultural Animations */
+  .animate-lotus-bloom {
+    animation: lotus-bloom 3s ease-in-out infinite;
+  }
+
+  .animate-meditation-breath {
+    animation: meditation-breath 4s ease-in-out infinite;
+  }
+
+  .animate-prayer-wave {
+    animation: prayer-wave 8s ease-in-out infinite;
+  }
+
+  /* Gradient Text */
+  .text-gradient-sacred {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+
+  .text-gradient-sunset {
+    background: var(--gradient-sunset);
+    @apply bg-clip-text text-transparent;
   }
 }

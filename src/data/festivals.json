@@ -1,0 +1,331 @@
+[
+  {
+    "id": "losar",
+    "name": "Losar - Tibetan New Year",
+    "tibetanName": "ལོ་གསར།",
+    "date": "February 10-12, 2024",
+    "duration": "3 days",
+    "monasteries": ["rumtek", "pemayangste", "tashiding", "enchey", "dubdi", "ralang", "phensang", "sanga-choeling", "phodong", "lingdum"],
+    "type": "New Year Celebration",
+    "significance": "Most important festival in Tibetan Buddhism",
+    "description": "Losar marks the beginning of the Tibetan New Year and is the most important festival in the Tibetan calendar. It's a time of renewal, purification, and celebration across all Buddhist monasteries in Sikkim.",
+    "culturalSignificance": "Represents the triumph of good over evil and marks the beginning of spring. It's a time for spiritual renewal, family reunions, and making offerings to ensure prosperity in the coming year.",
+    "rituals": [
+      "Cham (Mask Dance) performances depicting the victory of good over evil",
+      "Butter sculpture offerings representing prosperity",
+      "Prayer flag hanging for spreading positive energy",
+      "Traditional Tibetan opera performances",
+      "Monastery cleaning and decoration",
+      "Special feast preparation with traditional foods",
+      "Blessing ceremonies for the community"
+    ],
+    "traditionalFoods": [
+      "Guthuk (special noodle soup with hidden symbolic items)",
+      "Khapse (traditional fried pastries)",
+      "Chang (barley beer)",
+      "Yak butter tea",
+      "Tsampa (roasted barley flour)",
+      "Sweet rice (dessert with nuts and dried fruits)"
+    ],
+    "preparations": "Monasteries undergo thorough cleaning, monks prepare special decorations, and communities gather ingredients for traditional foods. Prayer flags are prepared and blessed.",
+    "images": [
+      "/assets/festivals/losar-cham-dance.jpg",
+      "/assets/festivals/losar-butter-sculptures.jpg",
+      "/assets/festivals/losar-prayer-flags.jpg",
+      "/assets/festivals/losar-community.jpg"
+    ],
+    "ticketPrice": "Free (donations welcomed)",
+    "bestViewingSpots": [
+      "Rumtek Monastery - Grand Cham dance performances",
+      "Enchey Monastery - Panoramic views of celebrations",
+      "Pemayangste Monastery - Traditional ceremonies"
+    ],
+    "whatToBring": ["Warm clothes", "Camera", "White scarves (kata) for offerings", "Small donations"],
+    "culturalEtiquette": [
+      "Remove hats inside monastery",
+      "Don't point feet toward altars",
+      "Photography may be restricted in prayer halls",
+      "Maintain respectful silence during prayers",
+      "Follow monk's guidance for participation"
+    ]
+  },
+  {
+    "id": "saga-dawa",
+    "name": "Saga Dawa Festival",
+    "tibetanName": "ས་ག་ཟླ་བ།",
+    "date": "May 15-17, 2024",
+    "duration": "3 days",
+    "monasteries": ["rumtek", "pemayangste", "tashiding"],
+    "type": "Buddha's Birth, Enlightenment & Parinirvana",
+    "significance": "Commemorates three major events in Buddha's life",
+    "description": "Saga Dawa commemorates the birth, enlightenment, and parinirvana (death) of Lord Buddha. It's considered the most sacred month in Tibetan Buddhism when merit accumulated through good deeds is multiplied.",
+    "culturalSignificance": "The most spiritually significant festival where devotees believe their positive actions generate exponentially more merit. It's a time for intensive spiritual practice and pilgrimage.",
+    "rituals": [
+      "Circumambulation (kora) around sacred sites",
+      "Intensive prayer and meditation sessions",
+      "Reading of Buddhist scriptures",
+      "Offering of butterlamps",
+      "Vegetarian feasting and dana (charity)",
+      "Release of captured animals as merit-making",
+      "Mountain pilgrimage to sacred sites"
+    ],
+    "traditionalFoods": [
+      "Strictly vegetarian meals during the festival",
+      "Tsampa offerings",
+      "Special monastery kheer (sweet rice pudding)",
+      "Fruit offerings to Buddha statues",
+      "Community vegetarian feast"
+    ],
+    "preparations": "Pilgrims prepare for mountain treks, monasteries organize extended prayer sessions, and communities gather for collective merit-making activities.",
+    "images": [
+      "/assets/festivals/saga-dawa-pilgrimage.jpg",
+      "/assets/festivals/saga-dawa-butterlamps.jpg",
+      "/assets/festivals/saga-dawa-kora.jpg"
+    ],
+    "ticketPrice": "Free (pilgrimage may require trekking permits)",
+    "bestViewingSpots": [
+      "Tashiding Monastery - Sacred kora path",
+      "Khecheopalri Lake - Pilgrimage destination",
+      "Pemayangste Monastery - Traditional ceremonies"
+    ],
+    "whatToBring": ["Trekking shoes", "Prayer beads", "Vegetarian food for offering", "Butterlamps"],
+    "culturalEtiquette": [
+      "Maintain vegetarian diet during festival",
+      "Participate respectfully in communal prayers",
+      "Don't disturb meditation sessions",
+      "Follow traditional pilgrimage etiquette"
+    ]
+  },
+  {
+    "id": "bumchu",
+    "name": "Bumchu Festival",
+    "tibetanName": "བུམ་ཆུ།",
+    "date": "January 28-30, 2024",
+    "duration": "3 days",
+    "monasteries": ["tashiding"],
+    "type": "Sacred Water Prediction Ceremony",
+    "significance": "Annual prophecy ritual unique to Tashiding Monastery",
+    "description": "The Bumchu festival is unique to Tashiding Monastery, where sacred water levels in a sealed pot predict the coming year's fortune for Sikkim. This mysterious ritual has been practiced for centuries.",
+    "culturalSignificance": "The most mysterious and significant predictive ceremony in Sikkim Buddhism. The water level changes in the sacred pot are interpreted as omens for the state's future prosperity, peace, and well-being.",
+    "rituals": [
+      "Opening of the sacred Bumchu pot by head lama",
+      "Interpretation of water level changes as prophecy",
+      "Distribution of sacred water to devotees",
+      "Special prayers for Sikkim's well-being",
+      "Mask dance performances",
+      "Refilling and resealing of the sacred pot",
+      "Community blessing ceremony"
+    ],
+    "traditionalFoods": [
+      "Special monastery feast",
+      "Blessed food distributed to pilgrims",
+      "Traditional Sikkimese dishes",
+      "Sacred water mixed with food offerings"
+    ],
+    "preparations": "Strict purification rituals for weeks before the ceremony. Only certain monks are allowed to handle the sacred pot. Pilgrims undertake special vows and fasting.",
+    "images": [
+      "/assets/festivals/bumchu-sacred-pot.jpg",
+      "/assets/festivals/bumchu-ceremony.jpg",
+      "/assets/festivals/bumchu-prediction.jpg",
+      "/assets/festivals/bumchu-crowds.jpg"
+    ],
+    "ticketPrice": "Free (donations for monastery upkeep welcomed)",
+    "bestViewingSpots": [
+      "Tashiding Monastery main hall - Only venue for this unique festival",
+      "Monastery courtyard - For mask dance performances",
+      "Hilltop viewpoints - For panoramic festival atmosphere"
+    ],
+    "whatToBring": ["Small container for sacred water", "Warm clothing", "Patience for crowds", "Offering money"],
+    "culturalEtiquette": [
+      "Maintain complete silence during pot opening",
+      "Follow strict queue discipline",
+      "Don't photograph the sacred pot ceremony",
+      "Receive sacred water with both hands and reverence"
+    ]
+  },
+  {
+    "id": "chaam",
+    "name": "Chaam (Mask Dance) Festival",
+    "tibetanName": "འཆམ།",
+    "date": "December 18-19, 2024",
+    "duration": "2 days",
+    "monasteries": ["enchey", "rumtek", "ralang"],
+    "type": "Sacred Mask Dance Celebration",
+    "significance": "Sacred dances representing victory of good over evil",
+    "description": "Chaam is a sacred mask dance festival performed by monks wearing elaborate costumes and masks representing various Buddhist deities, demons, and protective spirits. The dances tell stories of good triumphing over evil.",
+    "culturalSignificance": "Sacred theatrical performances that serve both as religious ritual and community entertainment. The dances are believed to purify the environment and protect the community from negative forces.",
+    "rituals": [
+      "Elaborate mask dance performances by monks",
+      "Ceremonial burning of effigies representing evil",
+      "Blessing of sacred dance costumes",
+      "Community prayers for protection",
+      "Traditional music with ceremonial instruments",
+      "Destruction of symbolic representations of obstacles",
+      "Distribution of blessed threads for protection"
+    ],
+    "traditionalFoods": [
+      "Special festival meals for performers",
+      "Community feast after performances",
+      "Traditional butter tea service",
+      "Sweet ceremonial offerings"
+    ],
+    "preparations": "Months of practice by monk dancers, preparation of elaborate costumes and masks, tuning of traditional instruments, and community organization of festivities.",
+    "images": [
+      "/assets/festivals/chaam-mask-dance.jpg",
+      "/assets/festivals/chaam-costumes.jpg",
+      "/assets/festivals/chaam-instruments.jpg",
+      "/assets/festivals/chaam-crowd.jpg"
+    ],
+    "ticketPrice": "Free (special seating may require small donation)",
+    "bestViewingSpots": [
+      "Enchey Monastery - Famous for spectacular performances",
+      "Rumtek Monastery - Large courtyard for better viewing",
+      "Ralang Monastery - Traditional intimate setting"
+    ],
+    "whatToBring": ["Camera (if permitted)", "Cushion for seating", "Warm clothes", "Patient mindset for long performances"],
+    "culturalEtiquette": [
+      "Don't interrupt dance performances",
+      "Maintain respectful distance from dancers",
+      "Follow photography restrictions",
+      "Don't touch dance costumes or masks",
+      "Appreciate the spiritual significance beyond entertainment"
+    ]
+  },
+  {
+    "id": "guru-rinpoche-birthday",
+    "name": "Guru Rinpoche Birthday",
+    "tibetanName": "གུ་རུ་རིན་པོ་ཆེའི་སྐུ་འཁྲུངས།",
+    "date": "July 10, 2024",
+    "duration": "1 day",
+    "monasteries": ["pemayangste", "sanga-choeling", "tashiding"],
+    "type": "Founder's Birthday Celebration",
+    "significance": "Birthday of Padmasambhava, founder of Tibetan Buddhism",
+    "description": "Celebrating the birthday of Guru Rinpoche (Padmasambhava), who brought Buddhism to Tibet and is revered as the second Buddha. The festival includes special prayers, teachings, and cultural programs.",
+    "culturalSignificance": "Honor to the master who established Buddhism in the Himalayan region. Especially significant for Nyingma monasteries as Guru Rinpoche founded their lineage.",
+    "rituals": [
+      "Special prayers to Guru Rinpoche",
+      "Reading of his life stories and teachings",
+      "Meditation on his eight manifestations",
+      "Offering of traditional ceremonial items",
+      "Community teachings on his instructions",
+      "Display of his sacred images and statues",
+      "Distribution of blessed food as prasad"
+    ],
+    "traditionalFoods": [
+      "Ceremonial offerings to Guru Rinpoche statue",
+      "Community vegetarian feast",
+      "Special sweet offerings",
+      "Blessed fruit distribution"
+    ],
+    "preparations": "Decoration of Guru Rinpoche statues, preparation of traditional offerings, arrangement of teaching sessions, and community coordination for celebrations.",
+    "images": [
+      "/assets/festivals/guru-rinpoche-statue.jpg",
+      "/assets/festivals/guru-rinpoche-offerings.jpg",
+      "/assets/festivals/guru-rinpoche-teachings.jpg"
+    ],
+    "ticketPrice": "Free",
+    "bestViewingSpots": [
+      "Pemayangste Monastery - Special Guru Rinpoche shrine",
+      "Sanga Choeling - Mountain setting for teachings",
+      "Tashiding - Sacred ceremonial atmosphere"
+    ],
+    "whatToBring": ["Offering flowers", "Incense sticks", "Small donations", "Notebook for teachings"],
+    "culturalEtiquette": [
+      "Show special reverence to Guru Rinpoche images",
+      "Participate quietly in teaching sessions",
+      "Follow traditional offering procedures",
+      "Maintain devotional attitude throughout"
+    ]
+  },
+  {
+    "id": "drukpa-kunley",
+    "name": "Drukpa Kunley Festival",
+    "tibetanName": "འབྲུག་པ་ཀུན་ལེགས།",
+    "date": "September 15, 2024",
+    "duration": "1 day",
+    "monasteries": ["rumtek"],
+    "type": "Saint's Commemoration",
+    "significance": "Honoring the unconventional saint Drukpa Kunley",
+    "description": "Festival celebrating Drukpa Kunley, the 'Divine Madman', known for his unconventional teaching methods and profound wisdom delivered through humor and apparent madness.",
+    "culturalSignificance": "Celebrates the profound teaching that enlightenment can come through any means, even through humor and unconventional behavior. Reminds practitioners not to be attached to conventional religious forms.",
+    "rituals": [
+      "Storytelling of Drukpa Kunley's adventures",
+      "Humorous teaching sessions by monks",
+      "Community laughter therapy",
+      "Reading of his unconventional poetry",
+      "Celebration of spontaneous wisdom",
+      "Breaking of conventional meditation postures",
+      "Joyful community interactions"
+    ],
+    "traditionalFoods": [
+      "Simple community meals reflecting humility",
+      "Shared food without ceremony",
+      "Local Sikkimese dishes",
+      "Informal communal dining"
+    ],
+    "preparations": "Preparation of Drukpa Kunley stories, organization of informal teaching sessions, and community gathering arrangements.",
+    "images": [
+      "/assets/festivals/drukpa-kunley-stories.jpg",
+      "/assets/festivals/drukpa-kunley-community.jpg",
+      "/assets/festivals/drukpa-kunley-teaching.jpg"
+    ],
+    "ticketPrice": "Free",
+    "bestViewingSpots": [
+      "Rumtek Monastery - Main celebration venue",
+      "Community halls - Informal gatherings",
+      "Monastery gardens - Outdoor sessions"
+    ],
+    "whatToBring": ["Open mind", "Sense of humor", "Casual comfortable clothes", "Readiness to learn through laughter"],
+    "culturalEtiquette": [
+      "Embrace the unconventional nature of teachings",
+      "Don't expect formal religious ceremonies",
+      "Participate in community laughter and joy",
+      "Learn to find wisdom in simple moments"
+    ]
+  },
+  {
+    "id": "dakini-day",
+    "name": "Dakini Day",
+    "tibetanName": "མཁའ་འགྲོ་མའི་དུས་ཆེན།",
+    "date": "Monthly (25th day of lunar month)",
+    "duration": "1 day",
+    "monasteries": ["pemayangste", "sanga-choeling"],
+    "type": "Divine Feminine Celebration",
+    "significance": "Honoring the feminine aspect of enlightened wisdom",
+    "description": "Monthly celebration honoring the Dakinis, female wisdom beings who represent the space element and primordial wisdom in Tibetan Buddhism.",
+    "culturalSignificance": "Recognition of the feminine principle in Buddhist enlightenment. Dakinis are considered to be emanations of wisdom who guide practitioners toward realization.",
+    "rituals": [
+      "Special prayers to Dakini deities",
+      "Offerings of flowers and perfumes",
+      "Meditation on emptiness and wisdom",
+      "Chanting of Dakini mantras",
+      "Display of Dakini thangka paintings",
+      "Teaching on feminine wisdom in Buddhism",
+      "Community prayers for wisdom and compassion"
+    ],
+    "traditionalFoods": [
+      "Light vegetarian offerings",
+      "Flower-decorated food",
+      "Sweet ceremonial cakes",
+      "Herbal teas and simple meals"
+    ],
+    "preparations": "Decoration with flowers, preparation of special offerings, arrangement of feminine-focused teachings, and community organization.",
+    "images": [
+      "/assets/festivals/dakini-offerings.jpg",
+      "/assets/festivals/dakini-thangka.jpg",
+      "/assets/festivals/dakini-meditation.jpg"
+    ],
+    "ticketPrice": "Free",
+    "bestViewingSpots": [
+      "Pemayangste Monastery - Traditional Dakini shrine",
+      "Sanga Choeling - Mountain meditation setting"
+    ],
+    "whatToBring": ["Fresh flowers", "Incense", "Clean white cloth", "Devotional attitude"],
+    "culturalEtiquette": [
+      "Show special respect for feminine wisdom",
+      "Participate in quiet contemplation",
+      "Maintain purity of thought and action",
+      "Honor the wisdom aspect of divine feminine"
+    ]
+  }
+]
