@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, Navigation, Compass } from "lucide-react";
+import InteractiveMap from "@/components/InteractiveMap";
 
 const Map = () => {
   return (
@@ -13,29 +13,31 @@ const Map = () => {
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gradient-sacred">
             Interactive Monastery Map
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Discover the locations of Sikkim's sacred monasteries on our interactive map.
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+            Discover the locations of Sikkim's sacred monasteries with our interactive map. 
+            Get directions, calculate distances, and plan your spiritual journey.
           </p>
+          
+          <div className="inline-flex items-center bg-muted rounded-full px-6 py-3">
+            <span className="text-2xl mr-3 animate-lotus-bloom">🗺️</span>
+            <span className="font-semibold text-primary">Interactive Navigation</span>
+            <span className="mx-2">•</span>
+            <span className="text-muted-foreground">No API Keys Required</span>
+            <span className="mx-2">•</span>
+            <span className="text-muted-foreground">Distance Calculator</span>
+          </div>
         </motion.div>
 
-        <div className="card-monastery text-center">
-          <div className="text-6xl mb-4">🗺️</div>
-          <h3 className="text-2xl font-bold mb-4 text-sacred">Interactive Map Loading</h3>
-          <p className="text-muted-foreground mb-6">
-            Our detailed monastery map is being prepared to help you navigate Sikkim's spiritual landscape. Soon you'll be able to explore locations, get directions, and plan your monastery visits.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="btn-sacred">
-              <Compass className="w-4 h-4 mr-2" />
-              Explore Map
-            </button>
-            <button className="btn-temple">
-              <Navigation className="w-4 h-4 mr-2" />
-              Get Directions
-            </button>
-          </div>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+        >
+          <InteractiveMap />
+        </motion.div>
       </div>
+      
+      {/* Bottom spacer for mobile navigation */}
       <div className="h-20 md:h-0"></div>
     </div>
   );
