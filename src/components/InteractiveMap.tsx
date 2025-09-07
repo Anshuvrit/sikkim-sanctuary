@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Navigation, Compass, Clock, Mountain } from 'lucide-react';
+import { MapPin, Navigation, Compass, Clock, Mountain, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import monasteriesData from '@/data/monasteries.json';

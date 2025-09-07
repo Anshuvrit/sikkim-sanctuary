@@ -110,10 +110,10 @@ export const useSmartSearch = () => {
       manuscriptsData.forEach(manuscript => {
         const searchFields = [
           manuscript.title,
-          manuscript.type,
+          manuscript.category,
           manuscript.language,
           manuscript.description,
-          manuscript.monasteryName
+          manuscript.monastery
         ].join(' ').toLowerCase();
 
         if (searchFields.includes(queryLower)) {
@@ -121,8 +121,8 @@ export const useSmartSearch = () => {
             type: 'manuscript',
             id: manuscript.id,
             title: manuscript.title,
-            description: `${manuscript.type} - ${manuscript.monasteryName}`,
-            category: manuscript.type
+            description: `${manuscript.category} - ${manuscript.monastery}`,
+            category: manuscript.category
           });
         }
       });

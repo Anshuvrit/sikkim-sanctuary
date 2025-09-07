@@ -97,7 +97,7 @@ const VirtualTour = ({ monasteryId, monasteryName }: VirtualTourProps) => {
 
   const togglePlay = () => {
     setIsPlaying(!isPlaying);
-    // In a real app, this would control actual audio playback
+    // In a real app, this would control actual audio playbook
   };
 
   const resetView = () => {
@@ -169,41 +169,40 @@ const VirtualTour = ({ monasteryId, monasteryName }: VirtualTourProps) => {
               </motion.button>
             ))}
           </motion.div>
-          </div>
+        </div>
 
-          {/* Zoom Controls */}
-          <div className="absolute top-4 right-4 flex flex-col gap-2">
-            <Button
-              size="sm"
-              variant="outline"
-              className="bg-background/90"
-              onClick={() => setZoom(Math.min(2, zoom + 0.25))}
-              disabled={zoom >= 2}
-            >
-              <ZoomIn className="w-3 h-3" />
-            </Button>
-            <Button
-              size="sm"
-              variant="outline" 
-              className="bg-background/90"
-              onClick={resetView}
-            >
-              <RotateCcw className="w-3 h-3" />
-            </Button>
-          </div>
+        {/* Zoom Controls */}
+        <div className="absolute top-4 right-4 flex flex-col gap-2">
+          <Button
+            size="sm"
+            variant="outline"
+            className="bg-background/90"
+            onClick={() => setZoom(Math.min(2, zoom + 0.25))}
+            disabled={zoom >= 2}
+          >
+            <ZoomIn className="w-3 h-3" />
+          </Button>
+          <Button
+            size="sm"
+            variant="outline" 
+            className="bg-background/90"
+            onClick={resetView}
+          >
+            <RotateCcw className="w-3 h-3" />
+          </Button>
+        </div>
 
-          {/* Progress Indicator */}
-          <div className="absolute bottom-4 left-4 right-4">
-            <div className="flex gap-2 mb-2">
-              {tourStops.map((_, index) => (
-                <div
-                  key={index}
-                  className={`h-1 flex-1 rounded-full ${
-                    index === currentStop ? 'bg-white' : 'bg-white/30'
-                  }`}
-                />
-              ))}
-            </div>
+        {/* Progress Indicator */}
+        <div className="absolute bottom-4 left-4 right-4">
+          <div className="flex gap-2 mb-2">
+            {tourStops.map((_, index) => (
+              <div
+                key={index}
+                className={`h-1 flex-1 rounded-full ${
+                  index === currentStop ? 'bg-white' : 'bg-white/30'
+                }`}
+              />
+            ))}
           </div>
         </div>
 
