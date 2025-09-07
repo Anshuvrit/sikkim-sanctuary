@@ -8,6 +8,7 @@ import Home from "@/pages/Home";
 import Monasteries from "@/pages/Monasteries";
 import MonasteryDetail from "@/pages/MonasteryDetail";
 import Festivals from "@/pages/Festivals";
+import FestivalDetail from "@/pages/FestivalDetail";
 import Community from "@/pages/Community";
 import Manuscripts from "@/pages/Manuscripts";
 import Map from "@/pages/Map";
@@ -28,6 +29,7 @@ const App = () => (
             <Route path="/monasteries" element={<Monasteries />} />
             <Route path="/monasteries/:id" element={<MonasteryDetail />} />
             <Route path="/festivals" element={<Festivals />} />
+            <Route path="/festivals/:id" element={<FestivalDetail />} />
             <Route path="/community" element={<Community />} />
             <Route path="/manuscripts" element={<Manuscripts />} />
             <Route path="/map" element={<Map />} />

@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { 
   ArrowLeft, MapPin, Calendar, Users, Clock, 
-  Mountain, Star, Heart, BookOpen, Camera, Coins
+  Mountain, Star, Heart, BookOpen, Camera, Coins, Eye
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -300,14 +300,60 @@ const MonasteryDetail = () => {
                     <div>
                       <h4 className="text-lg font-semibold mb-3 text-primary flex items-center">
                         <BookOpen className="w-5 h-5 mr-2" />
-                        Sacred Manuscripts
+                        Digital Manuscripts Archive
                       </h4>
                       <p className="text-muted-foreground mb-4">
                         This monastery houses precious manuscript collections that preserve ancient Buddhist teachings.
                       </p>
-                      <Link to="/manuscripts" className="btn-prayer">
-                        Explore Manuscripts
-                      </Link>
+                      
+                      <div className="grid md:grid-cols-2 gap-4 mb-4">
+                        {monastery.manuscripts.slice(0, 4).map((manuscriptId: string, index: number) => {
+                          const manuscript = {
+                            id: manuscriptId,
+                            title: `Sacred Text ${index + 1}`,
+                            type: index % 2 === 0 ? 'Religious Scripture' : 'Prayer Book',
+                            language: 'Tibetan',
+                            era: `${15 + index}th Century`,
+                            description: 'Ancient Buddhist wisdom preserved for generations',
+                            available: index < 2
+                          };
+                          
+                          return (
+                            <div key={manuscriptId} className="bg-muted/20 rounded-lg p-4 border border-border">
+                              <div className="flex items-start space-x-3">
+                                <BookOpen className="w-8 h-8 text-primary mt-1 flex-shrink-0" />
+                                <div className="flex-1">
+                                  <h5 className="font-semibold text-foreground mb-1">{manuscript.title}</h5>
+                                  <p className="text-sm text-muted-foreground mb-2">{manuscript.type}</p>
+                                  <p className="text-xs text-muted-foreground mb-2">
+                                    {manuscript.era} • {manuscript.language}
+                                  </p>
+                                  <p className="text-xs text-muted-foreground mb-3">
+                                    {manuscript.description}
+                                  </p>
+                                  
+                                  {manuscript.available ? (
+                                    <Button size="sm" className="btn-prayer">
+                                      <Eye className="w-3 h-3 mr-1" />
+                                      View Manuscript
+                                    </Button>
+                                  ) : (
+                                    <Badge variant="secondary">
+                                      🔄 Digitization in Progress
+                                    </Badge>
+                                  )}
+                                </div>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                      
+                      {monastery.manuscripts.length > 4 && (
+                        <p className="text-sm text-muted-foreground text-center">
+                          And {monastery.manuscripts.length - 4} more manuscripts being digitized...
+                        </p>
+                      )}
                     </div>
                   )}
 

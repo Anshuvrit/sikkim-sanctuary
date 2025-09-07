@@ -12,7 +12,6 @@ const Navigation = () => {
     { href: "/monasteries", label: "Monasteries", icon: MapPin },
     { href: "/festivals", label: "Festivals", icon: Calendar },
     { href: "/community", label: "Community", icon: Users },
-    { href: "/manuscripts", label: "Manuscripts", icon: BookOpen },
     { href: "/map", label: "Map", icon: Map },
   ];
 

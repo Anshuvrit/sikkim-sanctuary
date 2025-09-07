@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Calendar, MapPin, Clock, Users, Star, Ticket, Camera } from "lucide-react";
+import { motion } from "framer-motion";
+import { Calendar, MapPin, Clock, Users, Star, Ticket, Camera, Eye, Search, Filter } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import festivalsData from "@/data/festivals.json";
+import LoadingSpinner from "@/components/LoadingSpinner";
+import useLoadingState from "@/hooks/useLoadingState";
 
 interface Festival {
   id: string;
@@ -26,6 +29,8 @@ const Festivals = () => {
   const [festivals, setFestivals] = useState<Festival[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [searchQuery, setSearchQuery] = useState("");
+  const { loading: actionLoading, startLoading } = useLoadingState(1500);
 
   const categories = [
     { id: "all", label: "All Festivals" },
@@ -38,29 +43,38 @@ const Festivals = () => {
   ];
 
   useEffect(() => {
-    // Simulate loading
+    // Simulate realistic loading
     setTimeout(() => {
       setFestivals(festivalsData as Festival[]);
       setLoading(false);
-    }, 1000);
+    }, 1200);
   }, []);
 
-  const filteredFestivals = selectedCategory === "all" 
-    ? festivals 
-    : festivals.filter(f => f.type === selectedCategory);
+  const filteredFestivals = festivals
+    .filter(f => selectedCategory === "all" || f.type === selectedCategory)
+    .filter(f => 
+      searchQuery === "" || 
+      f.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      f.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      f.monasteries.some(m => m.toLowerCase().includes(searchQuery.toLowerCase()))
+    );
 
   const upcomingFestivals = festivals.filter(f => {
     const festivalDate = new Date(f.date.split(" - ")[0]);
     return festivalDate > new Date();
   });
 
+  const handleSearch = async (query: string) => {
+    setSearchQuery(query);
+    if (query) {
+      await startLoading();
+    }
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <div className="w-16 h-16 border-4 border-primary/20 border-t-primary rounded-full animate-spin mb-4"></div>
-          <p className="text-muted-foreground">Loading sacred festivals...</p>
-        </div>
+        <LoadingSpinner message="Loading sacred festivals..." size="lg" />
       </div>
     );
   }
@@ -87,6 +101,33 @@ const Festivals = () => {
             <span className="font-semibold text-primary">{festivals.length} Festivals</span>
             <span className="mx-2">•</span>
             <span className="text-muted-foreground">{upcomingFestivals.length} Upcoming</span>
+          </div>
+        </motion.div>
+
+        {/* Search Bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="mb-8"
+        >
+          <div className="relative max-w-md mx-auto">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
+            <Input
+              placeholder="Search festivals, monasteries, rituals..."
+              value={searchQuery}
+              onChange={(e) => handleSearch(e.target.value)}
+              className="pl-10"
+            />
+            {actionLoading && (
+              <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
+                <motion.div
+                  className="w-4 h-4 border-2 border-primary/30 border-t-primary rounded-full"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                />
+              </div>
+            )}
           </div>
         </motion.div>
 
