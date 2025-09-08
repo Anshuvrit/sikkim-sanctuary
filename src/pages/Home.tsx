@@ -4,6 +4,10 @@ import { ArrowRight, MapPin, Calendar, Users, BookOpen, Star, Heart } from "luci
 import heroImage from "@/assets/hero-monastery.jpg";
 import prayerFlags from "@/assets/prayer-flags.jpg";
 import lotusSacred from "@/assets/lotus-sacred.jpg";
+import MonasteryCarousel from "@/components/MonasteryCarousel";
+import AIChatBot from "@/components/AIChatBot";
+import SmartAudioGuide from "@/components/SmartAudioGuide";
+import OfflineBadge from "@/components/OfflineBadge";
 
 const Home = () => {
   const features = [
@@ -46,8 +50,20 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      {/* Floating Platform Badge */}
+      <div className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground px-6 py-2 rounded-full shadow-sacred text-sm font-medium z-50 animate-meditation-breath">
+        🏛️ One-stop platform for monastery exploration, booking & preservation!
+      </div>
+
+      {/* Hero Section with Carousel */}
+      <section className="relative pt-16 pb-8">
+        <div className="container-temple">
+          <MonasteryCarousel />
+        </div>
+      </section>
+
+      {/* Original Hero Content */}
+      <section className="relative py-20 flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
@@ -285,6 +301,11 @@ const Home = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* AI Components */}
+      <AIChatBot />
+      <SmartAudioGuide />
+      <OfflineBadge />
 
       {/* Bottom Spacer for Mobile Navigation */}
       <div className="h-20 md:h-0"></div>

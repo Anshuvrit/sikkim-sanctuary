@@ -12,6 +12,8 @@ import FestivalDetail from "@/pages/FestivalDetail";
 import Community from "@/pages/Community";
 import Manuscripts from "@/pages/Manuscripts";
 import Map from "@/pages/Map";
+import VirtualTours from "@/pages/VirtualTours";
+import CulturalCalendar from "@/pages/CulturalCalendar";
 import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,6 +35,8 @@ const App = () => (
             <Route path="/community" element={<Community />} />
             <Route path="/manuscripts" element={<Manuscripts />} />
             <Route path="/map" element={<Map />} />
+            <Route path="/virtual-tours/:monasteryId" element={<VirtualTours />} />
+            <Route path="/cultural-calendar" element={<CulturalCalendar />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
