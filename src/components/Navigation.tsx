@@ -1,11 +1,47 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { User, LogOut, Settings, Crown } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import AuthModal from '@/components/AuthModal';
+import GlobalSearch from '@/components/GlobalSearch';
+
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Home, MapPin, Calendar, Users, BookOpen, Map } from "lucide-react";
+import { Menu, X, Home, MapPin, Calendar, Users, Map } from "lucide-react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showAuthModal, setShowAuthModal] = useState(false);
+  const [authMode, setAuthMode] = useState<'login' | 'signup'>('login');
+  const [user, setUser] = useState<{name: string; email: string; avatar: string} | null>(null);
+  const [showUserMenu, setShowUserMenu] = useState(false);
   const location = useLocation();
+
+  // Check for existing authentication on mount
+  useEffect(() => {
+    const savedAuth = localStorage.getItem('monastery360_auth');
+    const savedUser = localStorage.getItem('monastery360_user');
+    
+    if (savedAuth && savedUser) {
+      setUser(JSON.parse(savedUser));
+    }
+  }, []);
+
+  const handleAuthSuccess = (userData: {name: string; email: string; avatar: string}) => {
+    setUser(userData);
+    setShowAuthModal(false);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('monastery360_auth');
+    localStorage.removeItem('monastery360_user');
+    setUser(null);
+    setShowUserMenu(false);
+  };
+
+  const openAuthModal = (mode: 'login' | 'signup') => {
+    setAuthMode(mode);
+    setShowAuthModal(true);
+  };
 
   const navItems = [
     { href: "/", label: "Home", icon: Home },
@@ -28,29 +64,102 @@ const Navigation = () => {
                 <span className="text-white text-sm font-bold">🏛️</span>
               </div>
               <div>
-                <h1 className="text-xl font-bold text-gradient-sacred">Monastery Heritage</h1>
+                <h1 className="text-xl font-bold text-gradient-sacred">Monastery 360</h1>
                 <p className="text-xs text-muted-foreground">Sikkim Buddhist Legacy</p>
               </div>
             </Link>
 
-            <div className="flex items-center space-x-8">
-              {navItems.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <Link
-                    key={item.href}
-                    to={item.href}
-                    className={`group flex items-center space-x-2 px-3 py-2 rounded-lg transition-sacred ${
-                      isActive(item.href)
-                        ? "bg-primary text-primary-foreground shadow-soft"
-                        : "text-foreground hover:bg-accent hover:text-accent-foreground"
-                    }`}
-                  >
-                    <Icon className="w-4 h-4" />
-                    <span className="font-medium">{item.label}</span>
-                  </Link>
-                );
-              })}
+            <div className="flex items-center space-x-4">
+              <GlobalSearch />
+              
+              <div className="flex items-center space-x-8">
+                {navItems.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <Link
+                      key={item.href}
+                      to={item.href}
+                      className={`group flex items-center space-x-2 px-3 py-2 rounded-lg transition-sacred ${
+                        isActive(item.href)
+                          ? "bg-primary text-primary-foreground shadow-soft"
+                          : "text-foreground hover:bg-accent hover:text-accent-foreground"
+                      }`}
+                    >
+                      <Icon className="w-4 h-4" />
+                      <span className="font-medium">{item.label}</span>
+                    </Link>
+                  );
+                })}
+              </div>
+
+              {/* Auth Section */}
+              <div className="flex items-center space-x-3">
+                {user ? (
+                  <div className="relative">
+                    <button
+                      onClick={() => setShowUserMenu(!showUserMenu)}
+                      className="flex items-center space-x-2 px-3 py-2 rounded-lg hover:bg-accent transition-colors"
+                    >
+                      <img
+                        src={user.avatar}
+                        alt={user.name}
+                        className="w-8 h-8 rounded-full"
+                      />
+                      <span className="font-medium">{user.name}</span>
+                    </button>
+                    
+                    <AnimatePresence>
+                      {showUserMenu && (
+                        <motion.div
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          className="absolute right-0 top-full mt-2 w-48 bg-card border border-border rounded-lg shadow-sacred z-50"
+                        >
+                          <div className="p-3 border-b border-border">
+                            <p className="font-medium text-primary">{user.name}</p>
+                            <p className="text-xs text-muted-foreground">{user.email}</p>
+                          </div>
+                          <div className="p-2">
+                            <button className="w-full flex items-center space-x-2 px-3 py-2 text-sm hover:bg-muted rounded">
+                              <Crown className="w-4 h-4" />
+                              <span>Premium Features</span>
+                            </button>
+                            <button className="w-full flex items-center space-x-2 px-3 py-2 text-sm hover:bg-muted rounded">
+                              <Settings className="w-4 h-4" />
+                              <span>Settings</span>
+                            </button>
+                            <button 
+                              onClick={handleLogout}
+                              className="w-full flex items-center space-x-2 px-3 py-2 text-sm hover:bg-muted rounded text-red-600"
+                            >
+                              <LogOut className="w-4 h-4" />
+                              <span>Sign Out</span>
+                            </button>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ) : (
+                  <div className="flex items-center space-x-2">
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => openAuthModal('login')}
+                    >
+                      Sign In
+                    </Button>
+                    <Button
+                      size="sm"
+                      onClick={() => openAuthModal('signup')}
+                      className="btn-sacred"
+                    >
+                      Sign Up
+                    </Button>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -63,7 +172,7 @@ const Navigation = () => {
             <div className="w-8 h-8 bg-gradient-sunset rounded-full flex items-center justify-center animate-lotus-bloom">
               <span className="text-white text-sm">🏛️</span>
             </div>
-            <span className="text-lg font-bold text-gradient-sacred">Heritage</span>
+            <span className="text-lg font-bold text-gradient-sacred">360</span>
           </Link>
 
           <button
@@ -138,6 +247,15 @@ const Navigation = () => {
 
       {/* Spacer for fixed navigation */}
       <div className="h-16"></div>
+
+      {/* Auth Modal */}
+      <AuthModal
+        isOpen={showAuthModal}
+        onClose={() => setShowAuthModal(false)}
+        mode={authMode}
+        onModeChange={setAuthMode}
+        onAuthSuccess={handleAuthSuccess}
+      />
     </>
   );
 };

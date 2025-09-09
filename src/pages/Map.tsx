@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import InteractiveMap from "@/components/InteractiveMap";
+import LeafletMap from "@/components/LeafletMap";
 
 const Map = () => {
   return (
@@ -22,19 +22,12 @@ const Map = () => {
             <span className="text-2xl mr-3 animate-lotus-bloom">🗺️</span>
             <span className="font-semibold text-primary">Interactive Navigation</span>
             <span className="mx-2">•</span>
-            <span className="text-muted-foreground">No API Keys Required</span>
-            <span className="mx-2">•</span>
-            <span className="text-muted-foreground">Distance Calculator</span>
+            <span className="text-muted-foreground">Offline Ready</span>
           </div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-        >
-          <InteractiveMap />
-        </motion.div>
+        {/* Replace Interactive Map with Leaflet */}
+        <LeafletMap />
       </div>
       
       {/* Bottom spacer for mobile navigation */}

@@ -50,10 +50,6 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Floating Platform Badge */}
-      <div className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground px-6 py-2 rounded-full shadow-sacred text-sm font-medium z-50 animate-meditation-breath">
-        🏛️ One-stop platform for monastery exploration, booking & preservation!
-      </div>
 
       {/* Hero Section with Carousel */}
       <section className="relative pt-16 pb-8">
